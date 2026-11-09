@@ -1,0 +1,1 @@
+# All API routes separated by domain

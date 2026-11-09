@@ -1,0 +1,1 @@
+// local storage manager (records, highest stage and best times)
