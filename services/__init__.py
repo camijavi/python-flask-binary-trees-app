@@ -1,1 +1,1 @@
-# Python business logic (No flask dependencies)
+"""Services package for Binary Tree educational algorithms, traversals and game engines"""
