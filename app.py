@@ -1,4 +1,5 @@
 from flask import Flask, jsonify
+from views.pageRoutes import Pages
 
 app = Flask(__name__)
 
