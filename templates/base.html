@@ -1,1 +1,27 @@
-<!-- Shared navbar, header, score modal and scripts -->
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>{% block title %} Binary Tree Mastery {% endblock %}</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+        {% block extra_css %}{% endblock %}
+    </head>
+    <body>
+        <nav class="navbar">
+            <a href="/" class="brand-color">TreeMastery</a>
+            <div class="nav-links">
+                <a href="/">Dashboard</a>
+                <a href="/simulator">Simulator</a>
+                <a href="/quiz/preorder">Pre-Order</a>
+                <a href="/quiz/inorder">In-Order</a>
+                <a href="/quiz/postorder">Post-Order</a>
+                <a href="/game" class="nav-highlight">Survival Mode</a>
+            </div>
+        </nav>
+        <main class="container">
+            {% block extra_css %}{% endblock %}
+        </main>
+        {% block extra_css %}{% endblock %}
+    </body>
+</html>
