@@ -1,0 +1,106 @@
+.tree-canvas-container {
+    width: 100%;
+    background-color: var(--surface-color);
+    border: 1px solid var(--surface-color);
+    border-radius: 12px;
+    padding: 1rem;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
+}
+
+.tree-svg{
+    width: 100%;
+    height: auto;
+    max-height: 550px;
+    display: block;
+}
+
+.tree-edge {
+    stroke: #475569;
+    stroke-width: 2.5px;
+    stroke-linecap: round;
+    transition: stroke 0.3s ease, stroke-width 0.3s ease;
+}
+
+.tree-edge.edge-active{
+    stroke: var(--primary);
+    stroke-width: 2.5px;
+    filter: drop-shadow(0 0 6px rgba(56, 189, 248, 0.6));
+}
+
+.tree-node {
+    cursor: pointer;
+    transition: trasnform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.tree-node:hover .node-circle {
+    stroke: var(--primary);
+    filter: drop-shadow(0 0 8px rgba(56, 189, 248, 0.5));
+}
+
+.node-circle {
+    fill: #1e293b;
+    stroke: #64748b;
+    stroke-width: 2.5px;
+    transition: fill 0.25s ease, stroke 0.25s ease, filter 0.25s ease;
+}
+
+.node-text {
+    font-family: 'JetBrains Mono', 'Fira Code', monospace;
+    font-size: 15px;
+    font-weight: 700;
+    fill: #f8fafc;
+    text-anchor: middle;
+    dominant-baseline: central;
+    user-select: none;
+    pointer-events: none;
+}
+
+.tree-node.node-active .node-circle {
+    fill: #d97706;
+    stroke: #fde047;
+    stroke-width: 3.5px;
+    filter: drop-shadow(0 0 12px rgba(253, 224, 71, 0.7));
+    animation: bounceSuccess 0.4s ease-out;
+}
+
+.tree-node.node-wrong .node-circle{
+    fill: #dc2626;
+    stroke: #f87171;
+    stroke-width: 3px;
+    filter: drop-shadow(0 0 10px rgba(248, 113, 113, 0.8));
+    animation: shakeNode 0.4s ease-in-out;
+}
+
+.tree-node.node-solved{
+    opacity: 0.65s;
+    cursor: default;
+}
+
+.tree-node.node-solved .node-circle{
+    fill: #064e3b;
+    stroke: #059669;
+}
+
+@keyframes pulseNode {
+    0% {transform: scale(1);}
+    100% {transform: scale(1.08);}
+}
+
+@keyframes bounceSuccess {
+    0% {transform: scale(0.9);}
+    50% {transform: scale(1.15);}
+    100%{transform: scale(1);}
+}
+
+@keyframes shakeNode {
+    0%, 100% {transform: translateX(0);}
+    20% {transform: translateX(-6px);}
+    40% {transform: translateX(6px);}
+    60% {transform: translateX(-4px);}
+    80% {transform: translateX(4px);}
+}
